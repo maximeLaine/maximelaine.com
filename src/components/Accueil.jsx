@@ -19,7 +19,7 @@ export default function Accueil() {
         <p className="text-sm md:text-base text-white/90"> {t('accueil')} </p>
       </div>
       <div className="w-full md:w-1/2 flex justify-center space-y-4">  
-        <img src="public/images/logo_white.svg" alt="Logo Maxime Laine" className="max-h-30" />
+        <img src="images/logo_white.svg" alt="Logo Maxime Laine" className="max-h-30" />
       </div>
     </motion.section>
   );
