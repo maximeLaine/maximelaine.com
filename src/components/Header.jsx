@@ -13,7 +13,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center font-sans">
         <div className="flex items-center space-x-2">
-          <img src="public/images/Header_Logo.png" alt="Logo" className="h-8 w-auto" />
+          <img src="public/images/logo_blue.svg" alt="Logo" className="h-8 w-auto" />
           <h1 className="text-xl font-bold text-primary tracking-widest">Maxime Lainé</h1>
         </div>
         <nav className="hidden md:flex space-x-6 text-sm font-medium text-primary">
