@@ -1,24 +1,27 @@
 {
   "name": "maximelaine-portfolio",
   "version": "1.0.0",
-  "private": true,
+  "description": "Personal portfolio and resume website for Maxime Laine",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npm run build:11ty && vite",
+    "build": "npm run build:11ty && vite build",
+    "build:11ty": "eleventy --input=src --output=_site",
+    "preview": "vite preview",
+    "serve": "npm run dev",
+    "clean": "rm -rf _site dist",
+    "start": "npm run dev"
   },
-  "dependencies": {
-    "framer-motion": "^10.18.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0"
-  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "data-visualization"
+  ],
+  "author": "Maxime Laine",
+  "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.4",
-    "@vitejs/plugin-react": "^4.4.1",
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "vite": "^6.3.4"
+    "@11ty/eleventy": "^2.0.1",
+    "terser": "^5.44.0",
+    "vite": "~6.3.6"
   }
 }

@@ -1,0 +1,107 @@
+---
+layout: base.njk
+---
+
+<!-- Start banner Area -->
+<section class="generic-banner relative">
+	<!-- Start banner Area -->
+	<div class="container">
+		<div class="row height align-items-center justify-content-center">
+			<div class="col-lg-10">
+				<div class="generic-banner-content">
+					<img src="/{{ logo }}" alt="{{ company }}">
+					<br><br>
+					<h2 class="text-white">{{ position }}</h2>
+					<p class="text-white">{{ company }}<br>
+					<i>{{ period }}</i>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+
+<!-- About Generic Start -->
+<div class="main-wrapper">
+
+	<!-- Start feature Area -->
+	{% if stackImages %}
+	<section class="feature-area pt-100">
+		<div class="container">
+			{% for stackImage in stackImages %}
+			<div class="row d-flex justify-content-center">
+				<h3 class="about-title mb-30">{{ stackImage.title }}</h3>
+			</div>
+			<div class="row d-flex justify-content-center">
+				<img src="/{{ stackImage.image }}" alt="" width="{{ stackImage.width }}">
+			</div>
+			<br><br>
+			{% endfor %}
+		</div>
+	</section>
+	{% endif %}
+
+	{% if image %}
+	<section class="feature-area pt-100">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<img src="/{{ image }}" alt="">
+			</div>
+		</div>
+	</section>
+	{% endif %}
+	<!-- End feature Area -->
+
+	<!-- Start Generic Area -->
+	<section class="about-generic-area pt-100">
+		<div class="container">
+			<h3 class="about-title mb-30">Job Description</h3>
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+					{% if description %}
+					<h3 class="about-title mb-30">{{ position }}</h3>
+					{% if descriptionLogo %}
+					<img src="/{{ descriptionLogo }}" alt="" width="30">
+					{% endif %}
+					<b>{{ description }}</b><br>
+					{% endif %}
+
+					{% if project %}
+					<b>Project: </b><br>
+					{{ project }}<br><br>
+					{% endif %}
+
+					{% if realizations %}
+					<b>Realization: </b><br>
+					{% for realization in realizations %}
+					&nbsp;&nbsp;&nbsp;&nbsp;• {{ realization }}<br>
+					{% endfor %}
+					<br>
+					{% endif %}
+
+					{% if stacks %}
+					<b>Stacks :</b><br>
+					{% for stack in stacks %}
+					&nbsp;&nbsp;&nbsp;&nbsp;• {{ stack }}<br>
+					{% endfor %}
+					<br><br>
+					{% endif %}
+
+					{% if stacksCategories %}
+					<b>Stacks: </b><br>
+					{% for category in stacksCategories %}
+					&nbsp;&nbsp; {{ category.category }}<br>
+					{% for item in category.items %}
+					&nbsp;&nbsp;&nbsp;&nbsp;• {{ item }}<br>
+					{% endfor %}
+					{% endfor %}
+					{% endif %}
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Generic Start -->
+</div>
