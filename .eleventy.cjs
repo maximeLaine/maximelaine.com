@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = function(eleventyConfig) {
   // Copy static assets to output (from root directory)
   eleventyConfig.addPassthroughCopy({ "css": "css" });
@@ -19,6 +21,11 @@ module.exports = function(eleventyConfig) {
     },
     templateFormats: ["html", "njk", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
+    liquidOptions: {
+      fileLoaderRoot: [path.resolve(__dirname, './src/_includes')],
+      root: [path.resolve(__dirname, './src')],
+      strictFiltering: true
+    }
   };
 };
